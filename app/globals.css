@@ -169,46 +169,45 @@
   }
 }
 
-@layer utilities {
-  .rounded-xxs {
-    border-radius: 2px;
-  }
-
-  .text-display-xs {
-    font-size: var(--text-display-xs);
-    line-height: var(--text-display-xs--line-height);
-  }
-
-  .text-display-sm {
-    font-size: var(--text-display-sm);
-    line-height: var(--text-display-sm--line-height);
-  }
-
-  .text-display-md {
-    font-size: var(--text-display-md);
-    line-height: var(--text-display-md--line-height);
-  }
-
-  .text-display-lg {
-    font-size: var(--text-display-lg);
-    line-height: var(--text-display-lg--line-height);
-    letter-spacing: var(--text-display-lg--tracking-tight);
-  }
-
-  .text-display-xl {
-    font-size: var(--text-display-xl);
-    line-height: var(--text-display-xl--line-height);
-    letter-spacing: var(--text-display-xl--tracking-tight);
-  }
-
-  .text-display-2xl {
-    font-size: var(--text-display-2xl);
-    line-height: var(--text-display-2xl--line-height);
-    letter-spacing: var(--text-display-2xl--tracking-tight);
-  }
-
-  .text-display-3xl {
-    font-size: var(--text-display-3xl);
-    line-height: var(--text-display-3xl--line-height);
-  }
+@utility rounded-xxs {
+  border-radius: 2px;
 }
+
+@utility text-display-xs {
+  font-size: var(--text-display-xs);
+  line-height: var(--text-display-xs--line-height);
+}
+
+@utility text-display-sm {
+  font-size: var(--text-display-sm);
+  line-height: var(--text-display-sm--line-height);
+}
+
+@utility text-display-md {
+  font-size: var(--text-display-md);
+  line-height: var(--text-display-md--line-height);
+}
+
+@utility text-display-lg {
+  font-size: var(--text-display-lg);
+  line-height: var(--text-display-lg--line-height);
+  letter-spacing: var(--text-display-lg--tracking-tight);
+}
+
+@utility text-display-xl {
+  font-size: var(--text-display-xl);
+  line-height: var(--text-display-xl--line-height);
+  letter-spacing: var(--text-display-xl--tracking-tight);
+}
+
+@utility text-display-2xl {
+  font-size: var(--text-display-2xl);
+  line-height: var(--text-display-2xl--line-height);
+  letter-spacing: var(--text-display-2xl--tracking-tight);
+}
+
+@utility text-display-3xl {
+  font-size: var(--text-display-3xl);
+  line-height: var(--text-display-3xl--line-height);
+}
+

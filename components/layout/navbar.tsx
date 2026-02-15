@@ -14,54 +14,56 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-      <nav className="w-full bg-[#1A0033]">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-6">
-          {/* Logo */}
-          <div className="flex items-center gap-2.25">
-            <Image src={Logo} alt="Logo" className="w-7 h-7" />
-            <span className="text-brand-primary-100 text-lg font-semibold">
-              Your Logo
-            </span>
-          </div>
+      <nav className="w-full fixed z-40">
+        <div className="w-full bg-transparent backdrop-blur-md mx-auto lg:px-32">
+          <div className="w-full flex items-center justify-between p-6">
+            {/* Logo */}
+            <div className="flex items-center gap-2.25">
+              <Image src={Logo} alt="Logo" className="w-7 h-7" />
+              <span className="text-brand-primary-100 text-lg font-semibold">
+                Your Logo
+              </span>
+            </div>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-8 text-white">
-            {["Home", "About", "Skill", "Projects", "FAQ", "Contact"].map(
-              (item) => (
-                <button
-                  key={item}
-                  className="text-md hover:opacity-70 transition cursor-pointer"
-                >
-                  {item}
-                </button>
-              ),
-            )}
-          </div>
+            {/* Desktop Menu */}
+            <div className="hidden lg:flex items-center gap-8 text-white">
+              {["Home", "About", "Skill", "Projects", "FAQ", "Contact"].map(
+                (item) => (
+                  <button
+                    key={item}
+                    className="text-md hover:opacity-70 transition cursor-pointer"
+                  >
+                    {item}
+                  </button>
+                ),
+              )}
+            </div>
 
-          {/* Desktop Button (Using Shadcn) */}
-          <div className="hidden md:block">
-            <Button className="rounded-full bg-brand-neutral-25 flex items-center gap-2 hover:bg-gray-200 transition cursor-pointer text-brand-neutral-950 text-sm font-medium px-12 py-6">
-              <Image src={MailIcon} alt="MailIcon" width={20} height={20} />
-              Hire Me
-            </Button>
-          </div>
+            {/* Desktop Button (Using Shadcn) */}
+            <div className="hidden lg:block">
+              <Button className="rounded-full bg-brand-neutral-25 flex items-center gap-2 hover:bg-gray-200 transition cursor-pointer text-brand-neutral-950 text-sm font-medium px-12 py-6">
+                <Image src={MailIcon} alt="MailIcon" width={20} height={20} />
+                Hire Me
+              </Button>
+            </div>
 
-          {/* Mobile Menu Button */}
-          <motion.button
-            onClick={() => setIsOpen(true)}
-            className="md:hidden cursor-pointer"
-            whileHover={{
-              scale: 1.25,
-              rotate: [0, -45, 45, 0],
-            }}
-            whileTap={{ scale: 0.9 }}
-            transition={{
-              duration: 0.4,
-              ease: "easeInOut",
-            }}
-          >
-            <Image src={MenuIcon} alt="MenuIcon" width={24} height={24} />
-          </motion.button>
+            {/* Mobile Menu Button */}
+            <motion.button
+              onClick={() => setIsOpen(true)}
+              className="lg:hidden cursor-pointer"
+              whileHover={{
+                scale: 1.25,
+                rotate: [0, -45, 45, 0],
+              }}
+              whileTap={{ scale: 0.9 }}
+              transition={{
+                duration: 0.4,
+                ease: "easeInOut",
+              }}
+            >
+              <Image src={MenuIcon} alt="MenuIcon" width={24} height={24} />
+            </motion.button>
+          </div>
         </div>
 
         {/* Mobile Dropdown Menu */}
@@ -71,7 +73,7 @@ export default function Navbar() {
               initial={{ x: "-100%" }}
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
-              className="fixed inset-0 bg-white z-10 flex flex-col p-8 md:hidden"
+              className="fixed inset-0 bg-white z-50 flex flex-col p-6 lg:hidden"
             >
               {/* Header */}
               <div className="flex items-center justify-between mb-10">
