@@ -56,6 +56,10 @@
   --text-display-3xl: 60px;
   --text-display-3xl--line-height: 72px;
 
+  --text-body-lg: 21.33px;
+  --text-body-lg--line-height: 32px;
+
+
   /* ================= RADIUS ================= */
 
   --radius-xxs: 2px;
@@ -210,4 +214,11 @@
   font-size: var(--text-display-3xl);
   line-height: var(--text-display-3xl--line-height);
 }
+
+@utility text-body-lg {
+  font-size: var(--text-body-lg);
+  line-height: var(--text-body-lg--line-height);
+  font-weight: 600;
+}
+
 

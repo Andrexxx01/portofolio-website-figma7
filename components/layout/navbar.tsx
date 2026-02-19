@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Logo from "@/assets/logo-symbol.svg";
@@ -12,6 +12,30 @@ import { Button } from "../ui/button";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const [isDarkSection, setIsDarkSection] = useState(true);
+
+    useEffect(() =>{
+        const hero = document.getElementById("hero");
+        const marquee = document.getElementById("marquee");
+        if (!hero && !marquee) return;
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                const isVisible = entries.some(entry => entry.isIntersecting);
+                setIsDarkSection(isVisible);
+            },
+            { threshold: 0,}
+        );
+        if (hero) observer.observe(hero);
+        if(marquee) observer.observe(marquee);
+        return () => observer.disconnect();
+    }, []);
+
+    const textColor = isDarkSection ? "text-white" : "text-brand-neutral-950";
+    const logoSrc = isDarkSection ? Logo : LogoBlack;
+    const logoText = isDarkSection ? "text-brand-primary-100" : "text-brand-neutral-950";
+    const iconFilter = isDarkSection ? "" : "invert";
+    const buttonColor = isDarkSection ? "bg-brand-neutral-25" : "bg-brand-neutral-400";
 
     return (
       <nav className="w-full fixed z-40">
@@ -19,14 +43,14 @@ export default function Navbar() {
           <div className="w-full flex items-center justify-between p-6">
             {/* Logo */}
             <div className="flex items-center gap-2.25">
-              <Image src={Logo} alt="Logo" className="w-7 h-7" />
-              <span className="text-brand-primary-100 text-lg font-semibold">
+              <Image src={logoSrc} alt="Logo" className="w-7 h-7" />
+              <span className={`${logoText} text-body-lg`}>
                 Your Logo
               </span>
             </div>
 
             {/* Desktop Menu */}
-            <div className="hidden lg:flex items-center gap-8 text-white">
+            <div className={`hidden lg:flex items-center gap-8 ${textColor}`}>
               {["Home", "About", "Skill", "Projects", "FAQ", "Contact"].map(
                 (item) => (
                   <button
@@ -41,7 +65,7 @@ export default function Navbar() {
 
             {/* Desktop Button (Using Shadcn) */}
             <div className="hidden lg:block">
-              <Button className="rounded-full bg-brand-neutral-25 flex items-center gap-2 hover:bg-gray-200 transition cursor-pointer text-brand-neutral-950 text-sm font-medium px-12 py-6">
+              <Button className={`rounded-full ${buttonColor} flex items-center gap-2 hover:bg-gray-200 transition cursor-pointer text-brand-neutral-950 text-sm font-medium px-12 py-6`}>
                 <Image src={MailIcon} alt="MailIcon" width={20} height={20} />
                 Hire Me
               </Button>
@@ -61,7 +85,7 @@ export default function Navbar() {
                 ease: "easeInOut",
               }}
             >
-              <Image src={MenuIcon} alt="MenuIcon" width={24} height={24} />
+              <Image src={MenuIcon} alt="MenuIcon" width={24} height={24} className={`${iconFilter}`} />
             </motion.button>
           </div>
         </div>
