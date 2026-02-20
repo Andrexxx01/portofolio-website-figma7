@@ -28,7 +28,9 @@ export default function HeroSection() {
             src={HeroImage}
             alt="HeroImage"
             loading="eager"
-            className="w-100 h-110 lg:w-180 lg:h-190 object-cover z-30"
+            width={400}
+            height={440}
+            className="lg:w-180 h-auto object-cover z-30"
           />
           {/* Floating Card */}
           <CardRating />

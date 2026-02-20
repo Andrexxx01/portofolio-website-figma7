@@ -17,9 +17,11 @@ export default function SkillCarousel() {
         setPage((prev) => (prev === 2 ? 0 : prev + 1));
     };
 
-    { /* mobile - 3 card per page */ }
-    const mobileStart = page * 3;
-    const mobileItems = skills.slice(mobileStart, mobileStart + 3);
+    { /* mobile - 3 cards per page - 3-3-4 because total 10 cards with 3 dot pagination image */ }
+    let mobileItems: Skill[] = [];
+    if (page === 0) mobileItems = skills.slice(0,3);
+    if (page === 1) mobileItems = skills.slice(3,6);
+    if (page === 2) mobileItems = skills.slice(6,10);
 
     { /* desktop - 6 card per page */ }
     let desktopItems: Skill[] = [];
@@ -38,7 +40,7 @@ export default function SkillCarousel() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -80 }}
                 transition={{ duration: 0.6, ease: "easeInOut" }}
-                className={`grid gap-6 w-full ${isDesktop ? "grid-cols-2 lg:grid-cols-3" : "grid-cols-1"}`}
+                className={`grid gap-6 w-full ${isDesktop ? "grid-cols-2" : "grid-cols-1"}`}
               >
                 {visibleItems.map((skill) =>(
                     <SkillCard key={skill.name} skill={skill} />
@@ -48,7 +50,7 @@ export default function SkillCarousel() {
 
             { /* Pagination */}
             <button onClick={nextPage}>
-                <Image src={page === 0 ? PaginationLeft : page === 1 ? PaginationMiddle : PaginationRight} alt="Pagination"/>
+                <Image src={page === 0 ? PaginationLeft : page === 1 ? PaginationMiddle : PaginationRight} alt="Pagination" className="cursor-pointer" />
             </button>
         </div>
     );

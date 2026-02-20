@@ -31,6 +31,16 @@ export default function Navbar() {
         return () => observer.disconnect();
     }, []);
 
+    const scrollToSection = (id:string) => {
+        const element = document.getElementById(id);
+        if (!element) return;
+
+        element.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+        });
+        setIsOpen(false);
+    };
     const textColor = isDarkSection ? "text-white" : "text-brand-neutral-950";
     const logoSrc = isDarkSection ? Logo : LogoBlack;
     const logoText = isDarkSection ? "text-brand-primary-100" : "text-brand-neutral-950";
@@ -51,13 +61,20 @@ export default function Navbar() {
 
             {/* Desktop Menu */}
             <div className={`hidden lg:flex items-center gap-8 ${textColor}`}>
-              {["Home", "About", "Skill", "Projects", "FAQ", "Contact"].map(
+              {[
+                { label: "Home", id: "hero" },
+                { label: "About", id: "about" },
+                { label: "Skill", id: "skill" },
+                { label: "Projects", id: "projects" },
+                { label: "FAQ", id: "faq" },
+                { label: "Contact", id: "contact" },].map(
                 (item) => (
                   <button
-                    key={item}
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
                     className="text-md hover:opacity-70 transition cursor-pointer"
                   >
-                    {item}
+                    {item.label}
                   </button>
                 ),
               )}
@@ -131,13 +148,20 @@ export default function Navbar() {
 
               {/* Mobile Menu List */}
               <div className="flex flex-col gap-8 text-md text-brand-neutral-950">
-                {["Home", "About", "Skill", "Projects", "FAQ", "Contact"].map(
+                {[
+                  { label: "Home", id: "hero" },
+                  { label: "About", id: "about" },
+                  { label: "Skill", id: "skill" },
+                  { label: "Projects", id: "projects" },
+                  { label: "FAQ", id: "faq" },
+                  { label: "Contact", id: "contact" },].map(
                   (item) => (
                     <button
-                      key={item}
+                      key={item.id}
+                      onClick={() => scrollToSection(item.id)}
                       className="ml-2 text-left hover:opacity-60 transition cursor-pointer"
                     >
-                      {item}
+                      {item.label}
                     </button>
                   ),
                 )}

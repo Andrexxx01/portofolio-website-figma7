@@ -221,4 +221,6 @@
   font-weight: 600;
 }
 
-
+html {
+  scroll-behavior: smooth;
+}

@@ -8,7 +8,7 @@ import CardBuildingDigital from "./cards/cardBuildingDigital";
 
 export default function AboutSection() {
     return (
-      <section className="w-full bg-[#F5F6F8] py-24 px-6 lg:px-16">
+      <section id="about" className="w-full bg-white py-24 px-6 lg:px-16">
         {/* Header Text */}
         <div className="max-w-7xl mx-auto mt-10 lg:mt-20 mb-16">
           <p className="text-brand-neutral-950 text-md lg:text-lg font-semibold mb-4">

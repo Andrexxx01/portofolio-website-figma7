@@ -10,11 +10,11 @@ export default function SkillCard({ skill }: {skill:Skill}) {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="bg-white rounded-2xl p-6 shadow-sm flex flex-col gap-4"
+        className="bg-white rounded-2xl p-6 card-shadow flex flex-col gap-4"
       >
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full bg-brand-neutral-100 flex items-center justify-center">
-            <Image src={skill.logo} alt={skill.name} width={24} height={24} />
+            <Image src={skill.logo} alt={skill.name} className="w-6 h-auto" />
           </div>
           <h4 className="font-semibold text-md lg:text-lg text-brand-neutral-950">
             {skill.name}

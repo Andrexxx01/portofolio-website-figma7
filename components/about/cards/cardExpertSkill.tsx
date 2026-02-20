@@ -49,8 +49,19 @@ export default function CardExpertSkill() {
     const row1 = [ LogoCSS, LogoJavascript, LogoHTML, LogoExpress, LogoSequelize,];
     const row2 = [ LogoTypescript, LogoReact, LogoDocker, LogoPostgreSQL, LogoMongoDB,];
 
+    const scrollToSection = () => {
+      const element = document.getElementById("skill");
+      if (!element) return;
+
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    };
+
     return (
       <motion.div
+        onClick={scrollToSection}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         transition={{
