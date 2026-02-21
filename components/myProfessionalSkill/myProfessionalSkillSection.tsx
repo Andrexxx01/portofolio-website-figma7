@@ -9,8 +9,8 @@ export default function MyProfessionalSkillSection() {
         initial={{ opacity: 0, y: 80 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="w-full lg:py-24 px-6 lg:px-16 bg-white"
+        viewport={{ once: false, amount: 0.3 }}
+        className="w-full lg:py-24 px-6 lg:px-16 bg-white scroll-mt-44 lg:scroll-mt-24"
         id="skill"
       >
         <div className="max-w-7xl mx-auto">

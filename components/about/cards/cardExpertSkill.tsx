@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import YellowStar from "@/assets/yellow-star.svg";
 import LogoCSS from "@/assets/css.svg";
 import LogoJavascript from "@/assets/javascript.svg";

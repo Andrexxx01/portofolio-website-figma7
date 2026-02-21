@@ -50,7 +50,7 @@ export default function SkillCarousel() {
 
             { /* Pagination */}
             <button onClick={nextPage}>
-                <Image src={page === 0 ? PaginationLeft : page === 1 ? PaginationMiddle : PaginationRight} alt="Pagination" className="cursor-pointer" />
+                <Image src={page === 0 ? PaginationLeft : page === 1 ? PaginationMiddle : PaginationRight} alt="Pagination" className="cursor-pointer mb-18 lg:mb-0" />
             </button>
         </div>
     );

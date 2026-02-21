@@ -19,8 +19,9 @@ export default function WhyChooseMeSection() {
           initial= {{ opacity: 0, y: 80 }}
           whileInView= {{ opacity: 1, y: 0 }}
           transition= {{ duration: 0.8, ease: [0.25, 0.8, 0.25, 1] }}
-          viewport={{ once: true }}
-          className="w-full py-24 px-6 lg:px-16 bg-brand-neutral-100"
+          viewport={{ once: false, amount: 0.3 }}
+          className="w-full py-24 px-6 lg:px-16 bg-brand-neutral-100 scroll-mt-20 lg:scroll-mt-24"
+          id="unique"
         >
           <div className="max-w-7xl mx-auto">
             { /* Titile */ }
@@ -41,20 +42,20 @@ export default function WhyChooseMeSection() {
               { /* Row */ }
               <div className="flex flex-col divide-y divide-brand-neutral-300">
                 {row.map((item, index) => (
-                  <div key={index} className="grid grid-cols-3 items-center py-6 text-brand-neutral-950 text-sm lg:text-lg">
-                    <div className="text-left pr-4">
+                  <div key={index} className="grid grid-cols-3 items-center py-6 font-medium text-brand-neutral-950 text-sm lg:text-lg">
+                    <div className="text-center ml-8">
                       {item}
                     </div>
                     { /* Me */ }
                     <div className="flex justify-center">
                       <div className="w-6 h-6 lg:w-7 lg:h-7 rounded-full bg-brand-secondary-300 flex items-center justify-center">
-                        <Check className="w-4 h-4 text-white" />
+                        <Check className="w-4.5 h-4.5 text-white" strokeWidth={4} />
                       </div>
                     </div>
                     { /* Other */ }
-                    <div className="flex justify-center">
+                    <div className="flex justify-center mr-8">
                       <div className="w-6 h-6 lg:w-7 lg:h-7 rounded-full bg-brand-neutral-400 flex items-center justify-center"> 
-                        <X  className="w-4 h-4 text-white" />
+                        <X  className="w-4.5 h-4.5 text-white" strokeWidth={4} />
                       </div>
                     </div>
                   </div>

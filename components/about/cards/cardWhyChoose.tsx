@@ -75,6 +75,16 @@ export default function CardWhyChoose() {
       "Maintainable Code",];
     const row3 = ["Maintainable Code", "React Expert", "Clean Code", "Performance Optimation", "TypeScript Proficiency", "React Expert"];
 
+    const scrollToSection = () => {
+      const element = document.getElementById("unique");
+      if (!element) return;
+
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    };
+
     return (
       <motion.div
         whileHover={{
@@ -88,6 +98,7 @@ export default function CardWhyChoose() {
           stiffness: 200,
           damping: 15,
         }}
+        onClick={scrollToSection}
         className="w-full h-93.5 md:h-98.75 bg-brand-secondary-300 cursor-pointer rounded-2xl p-6 flex flex-col gap-3"
       >
         {/* Title */}

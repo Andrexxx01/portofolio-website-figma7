@@ -31,6 +31,16 @@ export default function CardExperience() {
 
     const visibleItems = groupIndex === 0 ? portofolios.slice(0,3) : portofolios.slice(3,6);
 
+    const scrollToSection = () => {
+      const element = document.getElementById("projects");
+      if (!element) return;
+
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    };
+
     return (
       <motion.div
         whileHover={{ scale: 1.1 }}
@@ -39,7 +49,8 @@ export default function CardExperience() {
             type: "spring",
             stiffness: 200,
             damping: 15,
-        }} 
+        }}
+        onClick={scrollToSection}
         className="relative w-full h-93.5 md:h-98.75 rounded-2xl p-6 cursor-pointer overflow-hidden"
       >
         {/* Background */}
