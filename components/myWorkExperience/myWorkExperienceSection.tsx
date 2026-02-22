@@ -17,14 +17,14 @@ export default function MyWorkExperienceSection() {
   {
     /* Vertical Dashed Line */
   }
-  const lineHeight = useTransform(scrollYProgress, [0, 1], ["10%", "74%"]);
+  const lineHeight = useTransform(scrollYProgress, [0, 1], ["10%", "80%"]);
 
   {
     /* Purple Dot */
   }
   const dot1 = 1;
-  const dot2 = useTransform(scrollYProgress, [0.2, 0.3], [0, 1]);
-  const dot3 = useTransform(scrollYProgress, [0.45, 0.65], [0, 1]);
+  const dot2 = useTransform(scrollYProgress, (v) => (v > 0.26 ? 1 : 0));
+  const dot3 = useTransform(scrollYProgress, (v) => (v > 0.82 ? 1 : 0));
 
   return (
     <section ref={ref} className="w-full py-20 px-6 lg:px-16 bg-white">
@@ -36,7 +36,7 @@ export default function MyWorkExperienceSection() {
           {/* Vertical Dashed Line Motion */}
           <motion.div
             style={{ height: lineHeight }}
-            className="absolute top-6 lg:top-10 lg:left-1/5 xl:left-5/26 w-0.5 bg-transparent border-l-2 border-dashed border-brand-neutral-400"
+            className="absolute top-6 lg:top-10 lg:left-1/5 xl:left-5/26 w-0.5 bg-transparent border-l-2 border-dashed border-brand-neutral-400 z-0"
           />
           <div className="flex flex-col gap-10 lg:gap-18">
             {experiences.map((exp, index) => {
@@ -44,12 +44,12 @@ export default function MyWorkExperienceSection() {
               return (
                 <div key={index} className="relative">
                   {/* Purple Dot */}
-                  <motion.div
-                    style={{ opacity }}
-                    className="absolute -left-2.75 lg:left-5/28 flex items-center justify-center w-6 h-6 lg:w-10 lg:h-10 rounded-full border-2 border-dashed border-brand-neutral-400"
-                  >
-                    <div className="w-3.5 h-3.5 lg:w-6 lg:h-6 rounded-full bg-brand-primary-200" />
-                  </motion.div>
+                  <div className="absolute -left-2.75 lg:left-5/28 flex items-center justify-center w-6 h-6 lg:w-10 lg:h-10 rounded-full border-2 border-dashed border-brand-neutral-400 z-10 bg-white">
+                    <motion.div
+                      style={{ opacity }}
+                      className="w-3.5 h-3.5 lg:w-6 lg:h-6 rounded-full bg-brand-primary-200"
+                    />
+                  </div>
                   <div className="ml-12 lg:ml-0">
                     <ExperienceCard experience={exp} isDesktop={isDesktop} />
                   </div>

@@ -6,6 +6,8 @@ import MyProfessionalSkillSection from "@/components/myProfessionalSkill/myProfe
 import WhyChooseMeSection from "@/components/whyChooseMe/whyChooseMe";
 import MyLatestWorkSection from "@/components/myLatestWork/myLatestWorkSection";
 import MyWorkExperienceSection from "@/components/myWorkExperience/myWorkExperienceSection";
+import SuccessStoriesSection from "@/components/successStories/successStoriesSection";
+import QnaSection from "@/components/qna/qnaSection";
 
 export default function HomePage() {
   return (
@@ -18,7 +20,8 @@ export default function HomePage() {
       <WhyChooseMeSection />
       <MyLatestWorkSection />
       <MyWorkExperienceSection />
-      <WhyChooseMeSection />
+      <SuccessStoriesSection />
+      <QnaSection />
       Ini Halaman Homepage
     </>
   );
