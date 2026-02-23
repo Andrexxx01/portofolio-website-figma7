@@ -10,7 +10,8 @@ export default function SuccessStoriesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: false, amount: 0.3 }}
-          className="w-full py-24 px-6 lg:px-16 bg-white"
+          className="w-full py-24 px-6 lg:px-16 bg-white scroll-mt-44"
+          id="story"
         > 
           <div className="max-w-7xl mx-auto">
             <h2 className="text-center text-display-md lg:text-display-2xl font-bold mb-16">

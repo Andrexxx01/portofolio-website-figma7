@@ -10,8 +10,19 @@ import MailIcon from "@/assets/mail-01.svg";
 export default function CardProfile() {
     const [isHovered, setIsHovered] = useState(false);
 
+    const scrollToSection = () => {
+      const element = document.getElementById("contact");
+      if (!element) return;
+
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    };
+
     return (
       <motion.div
+        onClick={scrollToSection}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         transition={{
@@ -64,12 +75,12 @@ export default function CardProfile() {
           )}
         </AnimatePresence>
 
-        { /* Button Hire Me */}
+        {/* Button Hire Me */}
         <div className="relative z-20 mt-70 lg:mt-75 ">
-            <Button className="rounded-full px-16 py-6 lg:px-22 text-md font-medium bg-brand-neutral-25 text-brand-neutral-950 hover:bg-brand-primary-200 transition-all duration-300"
-            ><Image src={MailIcon} alt="Mail Icon" width={20} height={20} />
-                Hire Me
-            </Button>
+          <Button className="rounded-full px-16 py-6 lg:px-22 text-md font-medium bg-brand-neutral-25 text-brand-neutral-950 hover:bg-brand-primary-200 transition-all duration-300 cursor-pointer">
+            <Image src={MailIcon} alt="Mail Icon" width={20} height={20} />
+            Hire Me
+          </Button>
         </div>
       </motion.div>
     );

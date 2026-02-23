@@ -54,9 +54,7 @@ export default function Navbar() {
             {/* Logo */}
             <div className="flex items-center gap-2.25">
               <Image src={logoSrc} alt="Logo" className="w-7 h-7" />
-              <span className={`${logoText} text-body-lg`}>
-                Your Logo
-              </span>
+              <span className={`${logoText} text-body-lg`}>Your Logo</span>
             </div>
 
             {/* Desktop Menu */}
@@ -67,22 +65,24 @@ export default function Navbar() {
                 { label: "Skill", id: "skill" },
                 { label: "Projects", id: "projects" },
                 { label: "FAQ", id: "faq" },
-                { label: "Contact", id: "contact" },].map(
-                (item) => (
-                  <button
-                    key={item.id}
-                    onClick={() => scrollToSection(item.id)}
-                    className="text-md hover:opacity-70 transition cursor-pointer"
-                  >
-                    {item.label}
-                  </button>
-                ),
-              )}
+                { label: "Contact", id: "contact" },
+              ].map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="text-md hover:opacity-70 transition cursor-pointer"
+                >
+                  {item.label}
+                </button>
+              ))}
             </div>
 
             {/* Desktop Button (Using Shadcn) */}
             <div className="hidden lg:block">
-              <Button className={`rounded-full ${buttonColor} flex items-center gap-2 hover:bg-gray-200 transition cursor-pointer text-brand-neutral-950 text-sm font-medium px-12 py-6`}>
+              <Button
+                onClick={() => scrollToSection("contact")}
+                className={`rounded-full ${buttonColor} flex items-center gap-2 hover:bg-gray-200 transition cursor-pointer text-brand-neutral-950 text-sm font-medium px-12 py-6`}
+              >
                 <Image src={MailIcon} alt="MailIcon" width={20} height={20} />
                 Hire Me
               </Button>
@@ -102,7 +102,13 @@ export default function Navbar() {
                 ease: "easeInOut",
               }}
             >
-              <Image src={MenuIcon} alt="MenuIcon" width={24} height={24} className={`${iconFilter}`} />
+              <Image
+                src={MenuIcon}
+                alt="MenuIcon"
+                width={24}
+                height={24}
+                className={`${iconFilter}`}
+              />
             </motion.button>
           </div>
         </div>
@@ -154,22 +160,24 @@ export default function Navbar() {
                   { label: "Skill", id: "skill" },
                   { label: "Projects", id: "projects" },
                   { label: "FAQ", id: "faq" },
-                  { label: "Contact", id: "contact" },].map(
-                  (item) => (
-                    <button
-                      key={item.id}
-                      onClick={() => scrollToSection(item.id)}
-                      className="ml-2 text-left hover:opacity-60 transition cursor-pointer"
-                    >
-                      {item.label}
-                    </button>
-                  ),
-                )}
+                  { label: "Contact", id: "contact" },
+                ].map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className="ml-2 text-left hover:opacity-60 transition cursor-pointer"
+                  >
+                    {item.label}
+                  </button>
+                ))}
               </div>
 
               {/* Bottotm Button */}
               <div className="mt-10">
-                <Button className="w-full rounded-full py-6 flex items-center justify-center gap-2 bg-brand-primary-300 text-white cursor-pointer hover:bg-purple-800 transition text-sm font-medium">
+                <Button
+                  onClick={() => scrollToSection("contact")}
+                  className="w-full rounded-full py-6 flex items-center justify-center gap-2 bg-brand-primary-300 text-white cursor-pointer hover:bg-purple-800 transition text-sm font-medium"
+                >
                   <Image
                     src={MailIcon}
                     alt="MailIcon"

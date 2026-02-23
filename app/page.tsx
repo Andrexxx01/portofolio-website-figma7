@@ -8,6 +8,8 @@ import MyLatestWorkSection from "@/components/myLatestWork/myLatestWorkSection";
 import MyWorkExperienceSection from "@/components/myWorkExperience/myWorkExperienceSection";
 import SuccessStoriesSection from "@/components/successStories/successStoriesSection";
 import QnaSection from "@/components/qna/qnaSection";
+import ContactSection from "@/components/contact/contactSection";
+import FooterSection from "@/components/layout/footer";
 
 export default function HomePage() {
   return (
@@ -22,7 +24,8 @@ export default function HomePage() {
       <MyWorkExperienceSection />
       <SuccessStoriesSection />
       <QnaSection />
-      Ini Halaman Homepage
+      <ContactSection />
+      <FooterSection />
     </>
   );
 }

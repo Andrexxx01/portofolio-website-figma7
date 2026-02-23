@@ -10,13 +10,24 @@ import MessageIcon from "@/assets/message-chat-square.svg";
 import PersonImage from "@/assets/pict-hero.svg";
 
 export default function QnaSection() {
+    const scrollToSection = () => {
+      const element = document.getElementById("contact");
+      if (!element) return;
+
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    };
+
     return (
       <motion.section
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.3 }}
         transition={{ duration: 0.6 }}
-        className="w-full px-6 lg:px-16 py-0 lg:py-10 bg-white"
+        className="w-full px-6 lg:px-16 py-0 lg:py-10 bg-white scroll-mt-44"
+        id="faq"
       >
         <div className="max-w-7xl mx-auto">
           <div className="bg-brand-neutral-50 border border-brand-neutral-300 rounded-4xl p-6 lg:p-16">
@@ -50,7 +61,10 @@ export default function QnaSection() {
                   <p className="text-lg text-brand-neutral-950 mb-6">
                     Have more questions? <br /> Send me a message.
                   </p>
-                  <Button className="w-full bg-brand-primary-300 rounded-full py-6 cursor-pointer">
+                  <Button
+                    onClick={scrollToSection}
+                    className="w-full bg-brand-primary-300 rounded-full py-6 cursor-pointer"
+                  >
                     Get in touch
                   </Button>
                 </motion.div>
@@ -90,7 +104,10 @@ export default function QnaSection() {
                   <p className="text-sm text-brand-neutral-950 mb-6">
                     Have more questions? Send me a message.
                   </p>
-                  <Button className="w-full bg-brand-primary-300 rounded-full py-5 cursor-pointer">
+                  <Button
+                    onClick={scrollToSection}
+                    className="w-full bg-brand-primary-300 rounded-full py-5 cursor-pointer"
+                  >
                     Get in touch
                   </Button>
                 </motion.div>

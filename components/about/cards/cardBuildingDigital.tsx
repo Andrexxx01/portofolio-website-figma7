@@ -10,8 +10,19 @@ import IndonesiaFlag from "@/assets/indonesia-flag.svg";
 import WhiteSpot from "@/assets/white-spot.svg";
 
 export default function CardBuildingDigital() {
+    const scrollToSection = () => {
+      const element = document.getElementById("story");
+      if (!element) return;
+    
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    };
+
     return (
       <motion.div
+        onClick={scrollToSection}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         transition={{
