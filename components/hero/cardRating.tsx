@@ -48,7 +48,7 @@ export default function CardRating() {
             ease: "easeInOut",
           },
         }}
-        className="absolute z-10 max-w-36.5 lg:max-w-50 backdrop-blur-md bg-transparent border border-brand-neutral-25/10 shadow-xl rounded-2xl px-4 py-4 flex flex-col items-start gap-3"
+        className="absolute z-30 max-w-36.5 lg:max-w-50 backdrop-blur-md bg-transparent border border-brand-neutral-25/10 shadow-xl rounded-2xl px-4 py-4 flex flex-col items-start gap-3"
       >
         <h1 className="text-brand-neutral-25 font-bold text-display-xs lg:text-display-xl">
           5.0

@@ -18,7 +18,7 @@ export default function HeroSection() {
         </div>
 
         {/* Person Name */}
-        <h1 className="absolute top-25 lg:top-36 w-full z-30 text-center text-[38px] leading-14 sm:text-[62px] sm:leading-20 md:text-[74px] md:leading-30 text-brand-neutral-25 font-extrabold lg:text-[100px] lg:leading-48.75 xl:text-[126px]">
+        <h1 className="absolute top-18 lg:top-36 w-full z-30 text-center text-[38px] leading-14 sm:text-[62px] sm:leading-20 md:text-[74px] md:leading-30 text-brand-neutral-25 font-extrabold lg:text-[100px] lg:leading-48.75 xl:text-[126px]">
           ANDRE KURNIAWAN
         </h1>
 
@@ -30,7 +30,7 @@ export default function HeroSection() {
             loading="eager"
             width={400}
             height={440}
-            className="lg:w-180 h-auto object-cover z-30"
+            className="lg:w-180 h-auto object-cover z-31"
           />
           {/* Floating Card */}
           <CardRating />

@@ -60,7 +60,7 @@ export default function ContactForm({onSuccess, onFail, defaultValues,} : Props)
                   +62 81931886601
                 </span>
               </div>
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 ">
                 <div className="flex items-center justify-center w-10 h-10 lg:w-12 lg:h-12 bg-brand-primary-100 rounded-full">
                   <Image
                     src={MailIcon}

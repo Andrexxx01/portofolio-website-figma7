@@ -13,7 +13,7 @@ const items = [
 
 export default function HeroMarquee() {
     return (
-        <div id="marquee" className="absolute -left-1 top-170 lg:top-214 w-full overflow-hidden rotate-[-1.89deg] z-30">
+        <div id="marquee" className="absolute -left-0.5 top-168 lg:top-214 w-full overflow-hidden rotate-[-1.89deg] z-32">
           {/* Background strip */}
           <div className="bg-brand-neutral-950 py-6">
             <motion.div
