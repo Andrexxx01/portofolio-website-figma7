@@ -1,6 +1,6 @@
 # Andre Kurniawan — Frontend Developer Portfolio
 
-Modern, scalable, and performance-oriented personal portfolio built using **Next.js 14 (App Router)**, **TypeScript**, **Tailwind CSS**, **ShadCN UI**, and **Framer Motion**.
+Modern, scalable, and performance-oriented personal portfolio built using **Next.js**, **TypeScript**, **Tailwind CSS**, **ShadCN UI**, and **Framer Motion**.
 
 This project demonstrates advanced frontend engineering practices including component architecture, controlled modal systems, schema-based form validation, responsive UI design, animation orchestration, and clean state management.
 
@@ -8,8 +8,7 @@ This project demonstrates advanced frontend engineering practices including comp
 
 ## 🚀 Live Preview
 
-> (Add your deployed URL here)
-> Example: https://your-portfolio.vercel.app
+> https://portofolio-andrekurniawan-figma7.vercel.app/
 
 ---
 
@@ -33,12 +32,12 @@ It showcases:
 ## 🚀 Tech Stack
 
 **Frontend Framework**
-- Next.js 14 (App Router)
-- React 18
+- Next.js 16
+- React 19
 - TypeScript
 
 **Styling**
-- Tailwind CSS
+- Tailwind CSS v4
 - Custom Tailwind Theme Tokens
 - Responsive Mobile-First Design
 
@@ -58,6 +57,78 @@ It showcases:
 
 ---
 
+## 📂 Folder Structure
+```sh
+src/
+│
+├── app/
+│   ├── globals.css -- All Custom Tailwind Theme Token, custom typography, custom utility based on Figma Design System
+│   ├── layout.tsx -- Setup Custom Font
+│   └── page.tsx -- HomePage
+│
+├── components/
+│   ├── about/
+│   │   ├── cards/
+│   │   │   ├── cardBuildingDigital.tsx
+│   │   │   ├── cardExperience.tsx
+│   │   │   ├── cardExpertSkill.tsx
+│   │   │   ├── cardProfile.tsx
+│   │   │   └── cardWhyChoose.tsx
+│   │   └── aboutSection.tsx
+│   ├── contact/
+│   │   ├── contactFailed.tsx
+│   │   ├── contactForm.tsx
+│   │   ├── contactSection.tsx
+│   │   ├── contactSuccess.tsx
+│   │   └── schema.ts -- setup zod schema validation (error text helper, setting regex for email validation)
+│   ├── hero/
+│   │   ├── cardClients.tsx
+│   │   ├── cardFrontend.tsx
+│   │   ├── cardRating.tsx
+│   │   ├── heroMarquee.tsx
+│   │   └── heroSection.tsx  
+│   ├── layout/
+│   │   ├── footer.tsx
+│   │   ├── navbar.tsx  
+│   ├── myLatestWork/
+│   │   ├── data.ts -- All hardcode value each section will be declared
+│   │   ├── myLatestWorkSection.tsx
+│   │   ├── projectCard.tsx
+│   ├── myProfessionalSkill/
+│   │   ├── data.ts -- All hardcode value each section will be declared
+│   │   ├── myProfessionalSkillSection.tsx
+│   │   ├── skillCard.tsx
+│   │   ├── skillCarousel.tsx
+│   ├── myWorkexperience/
+│   │   ├── data.ts -- All hardcode value each section will be declared
+│   │   ├── experienceCard.tsx
+│   │   ├── myWorkExperienceSection.tsx
+│   ├── qna/
+│   │   ├── data.ts -- All hardcode value each section will be declared
+│   │   ├── qnaItem.tsx
+│   │   ├── qnaSection.tsx
+│   ├── successStories/
+│   │   ├── data.ts -- All hardcode value each section will be declared
+│   │   ├── successCard.tsx
+│   │   ├── successCarousel.tsx
+│   │   ├── successStoriesSection.tsx
+│   ├── ui/
+│   │   ├── accordion.tsx
+│   │   ├── button.tsx
+│   │   ├── form.tsx
+│   │   ├── input.tsx
+│   │   ├── label.ts
+│   │   ├── modalPortal.tsx
+│   │   ├── textarea.tsx
+│   └── whyChooseMe/
+│       └── whyChooseMe.tsx
+│
+├── hooks/useBreakpoint.ts -- Custom Hook for change width screen breakpoint ( mobile and desktop )
+│
+├── assets/ -- All Image (.svg file)
+│
+└── lib/
+```
 ## 🏗 Architecture & Engineering Highlights
 
 ### 1️⃣ Component-Based Structure
@@ -74,15 +145,9 @@ All components are structured for clean abstraction and minimal coupling.
 ---
 
 ## 🔧 Architecture & Implementation Details
-### 2️⃣ Centralized Type Management
+### 2️⃣ Using Typescript
 
-All TypeScript interfaces and types are centralized inside:
-
-```sh
-src/types/
-```
-
-This ensures:
+This project using Typescript for ensure :
 
 - Consistent data contracts across components
 - Easier refactoring
@@ -159,6 +224,7 @@ This ensures:
 - AnimatePresence
 - Controlled mount/unmount transitions
 - Scale + fade animation combination
+- Swipe Animations for successStory Section
 - All animations are optimized to prevent layout thrashing and unnecessary reflows.
 
 ### 7️⃣ Responsive Design Implementation
@@ -174,35 +240,15 @@ The layout is implemented using a mobile-first strategy:
 >-  Tablet <br>
 >-  Desktop
 
-## 📂 Folder Structure
-```sh
-src/
-│
-├── app/
-│   ├── layout.tsx
-│   └── page.tsx
-│
-├── components/
-│   ├── navbar/
-│   ├── hero/
-│   ├── skills/
-│   ├── faq/
-│   ├── contact/
-│   ├── footer/
-│   └── ui/
-│
-├── types/
-│
-├── assets/
-│
-└── lib/
-```
+
 ## ⚙️ Installation & Setup
 - Clone Repository
-- git clone https://github.com/your-username/portfolio.git
+- git clone https://github.com/Andrexxx01/portofolio-website-figma7.git
 - cd portfolio
 - Install Dependencies
-- npm install
+```sh
+npm install
+```
 - Run Development Server
 ```sh
 npm run dev
@@ -251,10 +297,19 @@ Deployment Steps
 - Animation Orchestration
 - Clean Code & Scalable Folder Structure
 
+## 🚀 Next Improvements
+
+- Optimize and maximize Lighthouse performance score
+- Add new projects to the portfolio
+- Link each portfolio item to its live demo and repository
+- Implement a summary popup dialog when users click on a project poster
+- Connect the portfolio website to social media profiles
+- Add background sound interaction on user click
+
 ## 👨‍💻 Author
 
 ## Andre Kurniawan - Frontend Developer
 
-GitHub: https://github.com/your-username
+GitHub: https://github.com/Andrexxx01/portofolio-website-figma7.git
 
-LinkedIn: https://linkedin.com/in/your-profile
+LinkedIn: https://www.linkedin.com/in/andre-kurniawan-5789908b/
