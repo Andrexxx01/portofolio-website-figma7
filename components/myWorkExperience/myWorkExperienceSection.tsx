@@ -7,7 +7,7 @@ import ExperienceCard from "./experienceCard";
 import { useIsDesktop } from "@/hooks/useBreakpoint";
 
 export default function MyWorkExperienceSection() {
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
   const isDesktop = useIsDesktop();
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -23,11 +23,11 @@ export default function MyWorkExperienceSection() {
     /* Purple Dot */
   }
   const dot1 = 1;
-  const dot2 = useTransform(scrollYProgress, (v) => (v > 0.26 ? 1 : 0));
+  const dot2 = useTransform(scrollYProgress, (v) => (v > 0.32 ? 1 : 0));
   const dot3 = useTransform(scrollYProgress, (v) => (v > 0.82 ? 1 : 0));
 
   return (
-    <section ref={ref} className="w-full py-20 px-6 lg:px-16 bg-white">
+    <section ref={ref} className="relative w-full py-20 px-6 lg:px-16 bg-white">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-center text-display-md lg:text-display-2xl font-bold text-brand-neutral-950 mb-10 lg:mb-20">
           My Work Experience
